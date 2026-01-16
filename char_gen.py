@@ -6,7 +6,7 @@ import random
 
 fake = Faker("ru_RU")
 dir_name = "dirforsheets"
-os.mkdir(dir_name)
+os.makedirs(dir_name, exist_ok=True)
 skills = [
     "Стремительный прыжок",
     "Электрический выстрел",
