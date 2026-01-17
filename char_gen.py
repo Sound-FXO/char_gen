@@ -4,13 +4,10 @@ from faker import Faker
 import random
 
 
-fake = Faker("ru_RU")
-dir_name = "dirforsheets"
-os.makedirs(dir_name, exist_ok=True)
-number = 0
-
-
-def create_a_charsheet():
+def create_a_charsheet(number):
+    fake = Faker("ru_RU")
+    dir_name = "dirforsheets"
+    os.makedirs(dir_name, exist_ok=True)
     skills = [
         "Стремительный прыжок",
         "Электрический выстрел",
@@ -90,9 +87,6 @@ def create_a_charsheet():
         "Я": "Я̋",
         " ": " ",
     }
-
-    global number
-    number += 1
     runic_skills = []
 
     for skill in skills:
@@ -139,8 +133,8 @@ def create_a_charsheet():
 
 
 def main():
-    for i in range(10):
-        create_a_charsheet()
+    for i in range(1, 11):
+        create_a_charsheet(i)
 
 
 if __name__ == "__main__":
